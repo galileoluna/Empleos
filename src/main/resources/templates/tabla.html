@@ -13,6 +13,9 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+
+<img th:src="@{/images/ram.png}" width="136" height="136" >
+
 	<h1 class="text-primary">Vacantes</h1>
 
 
@@ -21,6 +24,7 @@
 
 	<table style="width: 100%" border="2" class="table table-striped">
 		<tr>
+			<th>Logo</th>
 			<th>Id</th>
 			<th>Nombre</th>
 			<th>Fecha de publicacion</th>
@@ -29,6 +33,9 @@
 			<th>Destacado</th>
 		</tr>
 		<tr th:each="vacante :${vacantes}">
+			<td >
+			<img th:src="@{/images/{img}   (img=${vacante.imagen}) }" width="136" height="136"> 
+			</td>
 			<td th:text="${vacante.id}"></td>
 			<td th:text="${vacante.nombre}"></td>
 			<td th:text="${vacante.fecha}"></td>
